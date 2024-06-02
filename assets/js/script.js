@@ -146,7 +146,6 @@
 // let result = checkThreeDigitNumber(number);
 // console.log(`Թվի համար ${number}, պայմանն է ${result}.`);
 
-
 // 2. տրամաբանական t փոփոխականին վերագրել true արժեք , եթե հակառակ դեպքում 
 // false:  Արտածել t փոփոխականի արժեքը։
 
@@ -162,6 +161,30 @@
 //     console.log(`t-ի արժեքը հետևյալն է. ${t}`);
 //     return t;
 // }
+// let num = 234; 
+// checkThreeDigitNumber(num);
 
-let num = 234; 
-checkThreeDigitNumber(num);
+// 3․ հաշվել և արտածել եռանիշ թվի և թվանշանների գումարի  հարաբերության արժեքը,
+// եթե եռանիշ թիվը մեծ է տրված k թվից, հակառակ դեպքում միավորների թվանշանի և եռանիշ
+// թվի հարաբերության արժեքը։
+
+function calculateRatio(num, k) {
+    if (num < 100 || num > 999) {
+        throw new Error("Թիվը պետք է լինի եռանիշ թիվ։");
+    }
+    let hundreds = Math.floor(num / 100);
+    let tens = Math.floor((num % 100) / 10);
+    let units = num % 10;
+    let sum = hundreds + tens + units;
+    let ratio;
+    if (num > k) {
+        ratio = num / sum;
+    } else {
+        ratio = units / num;
+    }
+    console.log(`Հարաբերակցության արժեքն է: ${ratio}`);
+    return ratio;
+}
+let num = 234;  
+let k = 200;    
+calculateRatio(num, k);
