@@ -126,35 +126,42 @@
 
 // Տրված է եռանիշ թիվ ։ Կազմել հետևյալ խնդիրներիլուծման բլոկ-սխեման և ծրագիրը։
 
-// տրամաբանական տիպի փոփոխականին վերագրել true արժեք, եթե եռանիշ թվի միավորների
+//1. տրամաբանական տիպի փոփոխականին վերագրել true արժեք, եթե եռանիշ թվի միավորների
 // թվանշանը հավասար է տասնավորների և հարյուրավորների թվանշանների գումարին, հակառակ
 // դեպքում false ։ Արտածել t փոփոխականի արժեքը։
 
 
-function checkThreeDigitNumber(num) {
-   
-    let numStr = num.toString();
-
-   
-    if (numStr.length !== 3) {
-        return false;
-    }
-
-    
-    let hundreds = parseInt(numStr[0], 10);
-    let tens = parseInt(numStr[1], 10);
-    let units = parseInt(numStr[2], 10);
-
-
-    let isConditionMet = (units === (hundreds + tens));
-
-    return isConditionMet;
-}
-
-let number = 321; 
-let result = checkThreeDigitNumber(number);
-
-console.log(`For the number ${number}, the condition is ${result}.`);
+// function checkThreeDigitNumber(num) {
+//     let numStr = num.toString();
+//     if (numStr.length !== 3) {
+//         return false;
+//     }
+//     let hundreds = parseInt(numStr[0], 10);
+//     let tens = parseInt(numStr[1], 10);
+//     let units = parseInt(numStr[2], 10);
+//     let isConditionMet = (units === (hundreds + tens));
+//     return isConditionMet;
+// }
+// let number = 321; 
+// let result = checkThreeDigitNumber(number);
+// console.log(`Թվի համար ${number}, պայմանն է ${result}.`);
 
 
+// 2. տրամաբանական t փոփոխականին վերագրել true արժեք , եթե հակառակ դեպքում 
+// false:  Արտածել t փոփոխականի արժեքը։
 
+// function checkThreeDigitNumber(num) {
+//     if (num < 100 || num > 999) {
+//         throw new Error("Թիվը պետք է լինի եռանիշ թիվ։");
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let sum = hundreds + tens + units;
+//     let t = (sum % 5 === 0);
+//     console.log(`t-ի արժեքը հետևյալն է. ${t}`);
+//     return t;
+// }
+
+let num = 234; 
+checkThreeDigitNumber(num);
