@@ -275,21 +275,57 @@
 // թվանշանների գումարը փոքր է 5-ից, հակառակ դեպքում 'b' արժեքը։ Արտածել f-ի արժեքը։
 
 
-function determineValueF(num) {
-    if (num < 100 || num > 999) {
-        console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ:");
-        return;
-    }
-    let hundreds = Math.floor(num / 100);
-    let tens = Math.floor((num % 100) / 10);
-    let sum = hundreds + tens;
-    let f;
-    if (sum < 5) {
-        f = 'a';
-    } else {
-        f = 'b';
-    }
-    console.log("f-ի արժեքը հետևյալն է.", f);
-}
-let num = 375; 
-determineValueF(num);
+// function determineValueF(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ:");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let sum = hundreds + tens;
+//     let f;
+//     if (sum < 5) {
+//         f = 'a';
+//     } else {
+//         f = 'b';
+//     }
+//     console.log("f-ի արժեքը հետևյալն է.", f);
+// }
+// let num = 375; 
+// determineValueF(num);
+
+
+// 9. Արտածել եռանիշ թվի թվանշանները ըստ աճման կարգի հաջորդականության։
+
+// function displayDigitsInAscendingOrder(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ:");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let digits = [hundreds, tens, units];
+//     digits.sort((a, b) => a - b);
+//     console.log("Աճման կարգով թվանշաններն են՝", digits.join(", "));
+// }
+// let num = 375;
+// displayDigitsInAscendingOrder(num);
+
+// 10․Արտածել եռանիշ թվանշանները ըստ նվազման կարգի հաջորդականության։
+
+// function displayDigitsInDescendingOrder(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ:");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let digits = [hundreds, tens, units];
+//     digits.sort((a, b) => b - a);
+//     console.log("Նվազման կարգով թվանշաններն են.", digits.join(", "));
+// }
+// let num = 375;
+// displayDigitsInDescendingOrder(num);
+
