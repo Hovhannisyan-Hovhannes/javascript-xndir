@@ -168,23 +168,40 @@
 // եթե եռանիշ թիվը մեծ է տրված k թվից, հակառակ դեպքում միավորների թվանշանի և եռանիշ
 // թվի հարաբերության արժեքը։
 
-function calculateRatio(num, k) {
+// function calculateRatio(num, k) {
+//     if (num < 100 || num > 999) {
+//         throw new Error("Թիվը պետք է լինի եռանիշ թիվ։");
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let sum = hundreds + tens + units;
+//     let ratio;
+//     if (num > k) {
+//         ratio = num / sum;
+//     } else {
+//         ratio = units / num;
+//     }
+//     console.log(`Հարաբերակցության արժեքն է: ${ratio}`);
+//     return ratio;
+// }
+// let num = 234;  
+// let k = 200;    
+// calculateRatio(num, k);
+
+// 4. հաշվել և արտածել եռանիշ թվի թվանշաններից մեծագույնի արժեքը։
+
+function findLargestDigit(num) {
     if (num < 100 || num > 999) {
-        throw new Error("Թիվը պետք է լինի եռանիշ թիվ։");
+        console.log("Please enter a three-digit number.");
+        return;
     }
     let hundreds = Math.floor(num / 100);
     let tens = Math.floor((num % 100) / 10);
     let units = num % 10;
-    let sum = hundreds + tens + units;
-    let ratio;
-    if (num > k) {
-        ratio = num / sum;
-    } else {
-        ratio = units / num;
-    }
-    console.log(`Հարաբերակցության արժեքն է: ${ratio}`);
-    return ratio;
+    let largest = Math.max(hundreds, tens, units);
+    console.log("Ամենամեծ թվանշանն է:", largest);
 }
-let num = 234;  
-let k = 200;    
-calculateRatio(num, k);
+let num = 375;
+findLargestDigit(num);
+
