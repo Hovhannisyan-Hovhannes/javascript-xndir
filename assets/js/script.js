@@ -191,17 +191,54 @@
 
 // 4. հաշվել և արտածել եռանիշ թվի թվանշաններից մեծագույնի արժեքը։
 
-function findLargestDigit(num) {
+// function findLargestDigit(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ.");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let largest = Math.max(hundreds, tens, units);
+//     console.log("Ամենամեծ թվանշանն է:", largest);
+// }
+// let num = 375;
+// findLargestDigit(num);
+
+// 5. հաշվել և արտածել եռանիշ թվի թվանշաններից փոքրագույնի արժեքը։
+
+// function findSmallestDigit(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ.");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let smallest = Math.min(hundreds, tens, units);
+//     console.log("Ամենափոքր թվանշանն է:", smallest);
+// }
+// let num = 375;
+// findSmallestDigit(num);
+
+// 6․ հաշվել և արտածել եռանիշ թվի թվանշանների գումարի և եռանիշ թվի հարաբերության արժեքը,
+//  եթե միավորների թվանշանը մեծ է տասնավորների թվանշանից, հակառակ դեպքում արտածել եռանիշ թիվը։
+
+function calculateAndDisplay(num) {
     if (num < 100 || num > 999) {
-        console.log("Please enter a three-digit number.");
+        console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ.");
         return;
     }
     let hundreds = Math.floor(num / 100);
     let tens = Math.floor((num % 100) / 10);
     let units = num % 10;
-    let largest = Math.max(hundreds, tens, units);
-    console.log("Ամենամեծ թվանշանն է:", largest);
+    let sum = hundreds + tens + units;
+    if (units > tens) {
+        let ratio = sum / num;
+        console.log("Թվանշանների գումարի և թվի հարաբերակցությունը հետևյալն է.", ratio);
+    } else {
+        console.log("Թիվն է.", num);
+    }
 }
 let num = 375;
-findLargestDigit(num);
-
+calculateAndDisplay(num);
