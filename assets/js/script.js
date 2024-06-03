@@ -248,25 +248,48 @@
 // ենթադրվում է, որ եռանիշ թվի միավորների թվանշանը հավասար չե զրոյի։
 
 
-function calculateRatios(num) {
+// function calculateRatios(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Please enter a three-digit number.");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     if (units === 0) {
+//         console.log("Միավորների թվանշանը չպետք է զրո լինի:");
+//         return;
+//     }
+//     if (num > 300) {
+//         let ratio = tens / units;
+//         console.log("Տասնյակի և միավորի թվանշանի հարաբերակցությունը հետևյալն է։", ratio);
+//     } else {
+//         let ratio = hundreds / units;
+//         console.log("Հարյուրավոր թվանշանների և միավորների թվանշանի հարաբերակցությունը հետևյալն է։", ratio);
+//     }
+// }
+// let num = 375; 
+// calculateRatios(num);
+
+// 8. Սիմվոլային f փոփոխականին վերագրել 'a' արժեքը, եթե եռանիշ թվի տասնավորների և հարյուրավորների 
+// թվանշանների գումարը փոքր է 5-ից, հակառակ դեպքում 'b' արժեքը։ Արտածել f-ի արժեքը։
+
+
+function determineValueF(num) {
     if (num < 100 || num > 999) {
-        console.log("Please enter a three-digit number.");
+        console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ:");
         return;
     }
     let hundreds = Math.floor(num / 100);
     let tens = Math.floor((num % 100) / 10);
-    let units = num % 10;
-    if (units === 0) {
-        console.log("Միավորների թվանշանը չպետք է զրո լինի:");
-        return;
-    }
-    if (num > 300) {
-        let ratio = tens / units;
-        console.log("Տասնյակի և միավորի թվանշանի հարաբերակցությունը հետևյալն է։", ratio);
+    let sum = hundreds + tens;
+    let f;
+    if (sum < 5) {
+        f = 'a';
     } else {
-        let ratio = hundreds / units;
-        console.log("Հարյուրավոր թվանշանների և միավորների թվանշանի հարաբերակցությունը հետևյալն է։", ratio);
+        f = 'b';
     }
+    console.log("f-ի արժեքը հետևյալն է.", f);
 }
 let num = 375; 
-calculateRatios(num);
+determineValueF(num);
