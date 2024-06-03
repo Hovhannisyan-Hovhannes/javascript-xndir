@@ -224,21 +224,49 @@
 // 6․ հաշվել և արտածել եռանիշ թվի թվանշանների գումարի և եռանիշ թվի հարաբերության արժեքը,
 //  եթե միավորների թվանշանը մեծ է տասնավորների թվանշանից, հակառակ դեպքում արտածել եռանիշ թիվը։
 
-function calculateAndDisplay(num) {
+// function calculateAndDisplay(num) {
+//     if (num < 100 || num > 999) {
+//         console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ.");
+//         return;
+//     }
+//     let hundreds = Math.floor(num / 100);
+//     let tens = Math.floor((num % 100) / 10);
+//     let units = num % 10;
+//     let sum = hundreds + tens + units;
+//     if (units > tens) {
+//         let ratio = sum / num;
+//         console.log("Թվանշանների գումարի և թվի հարաբերակցությունը հետևյալն է.", ratio);
+//     } else {
+//         console.log("Թիվն է.", num);
+//     }
+// }
+// let num = 375;
+// calculateAndDisplay(num);
+
+// 7. հաշվել և արտածել եռանիշ թվի տասնավորների և  միավորների թվանշանների հարաբերության արժեքը,
+// եթե եռանիշ թիվը մեծ է 300-ից, հակառակ դեպքում հարյուրավորների և միավորների հարաբերության արժեքը։
+// ենթադրվում է, որ եռանիշ թվի միավորների թվանշանը հավասար չե զրոյի։
+
+
+function calculateRatios(num) {
     if (num < 100 || num > 999) {
-        console.log("Խնդրում ենք մուտքագրել եռանիշ թիվ.");
+        console.log("Please enter a three-digit number.");
         return;
     }
     let hundreds = Math.floor(num / 100);
     let tens = Math.floor((num % 100) / 10);
     let units = num % 10;
-    let sum = hundreds + tens + units;
-    if (units > tens) {
-        let ratio = sum / num;
-        console.log("Թվանշանների գումարի և թվի հարաբերակցությունը հետևյալն է.", ratio);
+    if (units === 0) {
+        console.log("Միավորների թվանշանը չպետք է զրո լինի:");
+        return;
+    }
+    if (num > 300) {
+        let ratio = tens / units;
+        console.log("Տասնյակի և միավորի թվանշանի հարաբերակցությունը հետևյալն է։", ratio);
     } else {
-        console.log("Թիվն է.", num);
+        let ratio = hundreds / units;
+        console.log("Հարյուրավոր թվանշանների և միավորների թվանշանի հարաբերակցությունը հետևյալն է։", ratio);
     }
 }
-let num = 375;
-calculateAndDisplay(num);
+let num = 375; 
+calculateRatios(num);
